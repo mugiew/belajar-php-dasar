@@ -13,7 +13,7 @@ This repository is a result of my learning journey with **Programmer Zaman Now**
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mugiew/belajar-php-dasar.git
    ```
 2. Explore the directories for individual lessons and projects.
 3. Follow the instructions in each folder's own README for setup and execution.
