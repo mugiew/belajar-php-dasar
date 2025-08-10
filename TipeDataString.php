@@ -16,7 +16,6 @@
  */
 function show(string $label, $value): void {
     echo "<strong>{$label}:</strong> ";
-    // var_dump menampilkan tipe data serta nilai, cocok untuk belajar/debug
     var_dump($value);
     echo "<br>";
 }
