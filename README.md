@@ -1,5 +1,5 @@
 
-# Repository Title
+# Repository Basic PHP
 
 This repository is a result of my learning journey with **Programmer Zaman Now**.
 
