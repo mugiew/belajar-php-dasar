@@ -1,4 +1,4 @@
-# 📘 Belajar PHP Dasar Bareng Mugi
+# 📘 Belajar PHP Dasar Bareng Mugiew
 
 Halo, teman-teman! 👋.
 Repository ini adalah tempat kita barengan belajar **dasar-dasar PHP**. Materinya dirancang agar mudah dimengerti dan pastinya seru kaya nonton kartun Minggu pagi 🐣
