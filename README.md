@@ -1,6 +1,6 @@
 # 📘 Belajar PHP Dasar Bareng Mugi
 
-Halo, teman-teman! 👋  
+Halo, teman-teman! 👋
 Repository ini adalah tempat kita barengan belajar **dasar-dasar PHP** dari nol sampai jago bikin web dinamis. Materinya dirancang agar mudah dimengerti dan pastinya seru kaya nonton kartun Minggu pagi 🐣
 
 ## 🎯 Tujuan Pembelajaran
@@ -62,5 +62,15 @@ Berikut adalah daftar materi yang akan kamu pelajari di repository ini:
 ## 🧑‍💻 Cara Menggunakan Repo Ini
 
 1. **Clone** dulu repo-nya:
-   ```bash
-   git clone https://github.com/mugiew/belajar-php-dasar.git
+```bash
+git clone https://github.com/mugiew/belajar-php-dasar.git
+```
+2. Masuk ke direktori:
+```bash
+cd belajar-php-dasar
+```
+3. Pilih folder materi yang ingin kamu pelajari. Di dalam setiap folder sudah ada penjelasan dan contoh kodenya.
+4. Jalankan script PHP-nya menggunakan terminal:
+```bash
+php nama-file.php
+```
