@@ -1,125 +1,119 @@
 <?php
 /**
- * =========================================================
- *  FUNCTION PRACTICE – REFAKTOR UNTUK PEMULA
- * =========================================================
+ * ============================
+ * FUNGSI / FUNCTION DI PHP
+ * ============================
  *
- *  • Semua fungsi dideklarasikan di awal file.
- *  • Dokumentasi dengan PHPDoc.
- *  • Tipe data ketat (type hinting) + nilai kembali (return type).
- *  • Contoh penggunaan terpusat pada fungsi runDemo().
+ * 1. Membuat function
+ * 2. Lokasi function
+ * 3. Function dengan argumen
+ * 4. Default argument value
+ * 5. Kesalahan umum: urutan parameter
+ * 6. Fungsi anonim (closure)
+ * 7. Demo – mengeksekusi semua contoh sekaligus
  */
 
-/* ==============================
- * 1. Fungsi sederhana
- * ============================== */
- /**
-  * Menampilkan salam umum.
-  *
-  * @return void
-  */
+/* -------------------------------------------------
+ * 1. MEMBUAT FUNCTION
+ * ------------------------------------------------- */
 function sayHello(): void
 {
-    echo "Hello Mr. Mugi Ganteng Maximal!\n";
+    echo 'Hello Mr. Mugi Ganteng Maximal!' . PHP_EOL;
 }
 
-/* ==============================
- * 2. Fungsi dengan parameter
- * ============================== */
- /**
-  * Menyapa seseorang dengan nama yang diberikan.
-  *
-  * @param string $name Nama yang akan disapa
-  * @return void
-  */
+/* -------------------------------------------------
+ * 2. LOKASI FUNCTION
+ * ------------------------------------------------- */
+$buat = false;
+if ($buat) {
+    function hi(): void
+    {
+        echo 'Hi Tampan!' . PHP_EOL;
+    }
+}
+
+/* -------------------------------------------------
+ * 3. FUNCTION DENGAN ARGUMEN
+ * ------------------------------------------------- */
 function sayHelloName(string $name): void
 {
-    echo "Hello $name\n";
+    echo "Hello $name" . PHP_EOL;
 }
 
-/* ==============================
- * 3. Fungsi dengan nilai default
- * ============================== */
- /**
-  * Menyapa dengan nama default bila tidak ada argumen.
-  *
-  * @param string $name Nama (default: 'Mugi')
-  * @return void
-  */
+/* -------------------------------------------------
+ * 4. DEFAULT ARGUMENT VALUE
+ * ------------------------------------------------- */
 function sayHelloDefault(string $name = 'Mugi'): void
 {
-    echo "Hello $name\n";
+    echo "Hello $name" . PHP_EOL;
 }
 
-/* ==============================
- * 4. Fungsi dengan return value
- * ============================== */
- /**
-  * Menghitung kuadrat dari sebuah bilangan bulat.
-  *
-  * @param int $number Bilangan yang akan dikuadratkan
-  * @return int Hasil kuadrat
-  */
-function square(int $number): int
-{
-    return $number * $number;
-}
-
-/* ==============================
- * 5. Fungsi dengan urutan parameter yang benar
- * ============================== */
- /**
-  * Menyapa dengan nama depan dan belakang.
-  * Parameter wajib diletakkan dulu, yang optional di belakang.
-  *
-  * @param string $first Nama depan (wajib)
-  * @param string $last  Nama belakang (opsional, default: 'Anon')
-  * @return void
-  */
+/* -------------------------------------------------
+ * 5. URUTAN PARAMETER (wajib dulu, default belakangan)
+ * ------------------------------------------------- */
 function sayFullName(string $first, string $last = 'Anon'): void
 {
-    echo "Hello $first $last\n";
+    echo "Hello $first $last" . PHP_EOL;
 }
 
-/* ==============================
- * 6. Fungsi anonim (closure) – contoh callback sederhana
- * ============================== */
-$greeting = function (string $name) use ($prefix = 'Hai'): string {
+/* -------------------------------------------------
+ * 6. FUNGSI ANONIM (CLOSURE)
+ * ------------------------------------------------- */
+// Pilihan A: variabel $prefix dideklarasikan di luar closure
+$prefix = 'Hai';
+$greeting = function (string $name) use ($prefix): string {
     return "$prefix $name!";
 };
 
-/* ==============================
- * 7. Demo – mengeksekusi semua contoh sekaligus
- * ============================== */
- /**
-  * Menjalankan semua contoh fungsi di atas.
-  *
-  * @return void
-  */
+/* // Pilihan B: menggunakan parameter default (jika tidak ingin memakai $prefix di luar)
+// $greeting = function (string $name, string $prefix = 'Hai'): string {
+//     return "$prefix $name!";
+// };
+ */
+
+/* -------------------------------------------------
+ * 7. DEMO – mengeksekusi semua contoh sekaligus
+ * ------------------------------------------------- */
 function runDemo(): void
 {
+    global $greeting;
+
     echo "=== Demo Fungsi PHP ===\n";
 
+    // 1. Function sederhana
     sayHello();
-    sayHelloName('Mugiew');
-    sayHelloDefault();               // menggunakan default
-    sayHelloDefault('Galeano');      // override default
 
-    echo "4² = " . square(4) . "\n";
+    // 2. Function dengan argumen
+    sayHelloName('Mugiew');
+
+    // 3. Default argument
+    sayHelloDefault(); // menggunakan nilai default
+    sayHelloDefault('Galeano'); // override default
+
+    // 4. Contoh fungsi dengan tipe data return
+    echo '4² = ' . square(4) . "\n";
     echo "'5'² = " . square(5) . " (string otomatis dikonversi)\n";
 
-    sayFullName('Budi');                     // Budi Anon
-    sayFullName('Mugi', 'Setia');            // Mugi Setia
+    // 5. Urutan parameter yang benar
+    sayFullName('Budi'); // Budi Anon
+    sayFullName('Mugi', 'Setia'); // Mugi Setia
 
-    // Anonymous function
+    // 6. Anonymous function (closure) – sudah dideklarasikan di luar
     echo $greeting('Andi') . "\n";
 
     echo "=== Akhir Demo ===\n";
 }
 
-/* ==============================
- * Eksekusi demo hanya bila file dijalankan langsung
- * ============================== */
-if (php_sapi_name() === 'cli' || !empty($_SERVER['SCRIPT_FILENAME'])) {
-    runDemo();
+/* -------------------------------------------------
+ * 8. FUNCTION DENGAN TYPE DECLARATION (contoh tambahan)
+ * ------------------------------------------------- */
+function square(int $number): int
+{
+    // PHP akan otomatis meng‑cast string yang berisi angka menjadi integer
+    return $number * $number;
 }
+
+/* -------------------------------------------------
+ * 9. EKSEKUSI DEMO
+ * ------------------------------------------------- */
+runDemo();
