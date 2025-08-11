@@ -1,119 +1,180 @@
 <?php
 /**
- * ============================
- * FUNGSI / FUNCTION DI PHP
- * ============================
+ * ======================================
+ * BELAJAR FUNCTION DI PHP 🚀
+ * ======================================
+ * Disusun oleh: Bang Mugi Ganteng Maximal 😎
  *
- * 1. Membuat function
- * 2. Lokasi function
- * 3. Function dengan argumen
- * 4. Default argument value
- * 5. Kesalahan umum: urutan parameter
- * 6. Fungsi anonim (closure)
- * 7. Demo – mengeksekusi semua contoh sekaligus
+ * Materi yang dibahas:
+ *  1. Function Sederhana
+ *  2. Function dengan Parameter
+ *  3. Default Parameter
+ *  4. Urutan Parameter
+ *  5. Function dengan Return Value
+ *  6. Anonymous Function (Closure)
+ *  7. Arrow Function
+ *  8. Variable Function
+ *  9. Callback Function
+ * 10. Recursive Function
+ * 11. Eksekusi Demo
  */
 
-/* -------------------------------------------------
- * 1. MEMBUAT FUNCTION
- * ------------------------------------------------- */
+// --------------------------------------
+// 1. FUNCTION SEDERHANA
+// --------------------------------------
 function sayHello(): void
 {
-    echo 'Hello Mr. Mugi Ganteng Maximal!' . PHP_EOL;
+    echo "👋 Hello, Dunia!\n";
 }
 
-/* -------------------------------------------------
- * 2. LOKASI FUNCTION
- * ------------------------------------------------- */
-$buat = false;
-if ($buat) {
-    function hi(): void
-    {
-        echo 'Hi Tampan!' . PHP_EOL;
-    }
-}
-
-/* -------------------------------------------------
- * 3. FUNCTION DENGAN ARGUMEN
- * ------------------------------------------------- */
-function sayHelloName(string $name): void
+// --------------------------------------
+// 2. FUNCTION DENGAN PARAMETER
+// --------------------------------------
+function sayHelloTo(string $name): void
 {
-    echo "Hello $name" . PHP_EOL;
+    echo "👋 Hello, $name!\n";
 }
 
-/* -------------------------------------------------
- * 4. DEFAULT ARGUMENT VALUE
- * ------------------------------------------------- */
-function sayHelloDefault(string $name = 'Mugi'): void
+// --------------------------------------
+// 3. DEFAULT PARAMETER
+// --------------------------------------
+function sayHelloDefault(string $name = 'Murid PHP'): void
 {
-    echo "Hello $name" . PHP_EOL;
+    echo "👋 Hello, $name!\n";
 }
 
-/* -------------------------------------------------
- * 5. URUTAN PARAMETER (wajib dulu, default belakangan)
- * ------------------------------------------------- */
-function sayFullName(string $first, string $last = 'Anon'): void
+// --------------------------------------
+// 4. URUTAN PARAMETER (WAJIB DULU)
+// --------------------------------------
+function sayFullName(string $first, string $last = 'Anonim'): void
 {
-    echo "Hello $first $last" . PHP_EOL;
+    echo "👤 Nama Lengkap: $first $last\n";
 }
 
-/* -------------------------------------------------
- * 6. FUNGSI ANONIM (CLOSURE)
- * ------------------------------------------------- */
-// Pilihan A: variabel $prefix dideklarasikan di luar closure
-$prefix = 'Hai';
-$greeting = function (string $name) use ($prefix): string {
-    return "$prefix $name!";
-};
-
-/* // Pilihan B: menggunakan parameter default (jika tidak ingin memakai $prefix di luar)
-// $greeting = function (string $name, string $prefix = 'Hai'): string {
-//     return "$prefix $name!";
-// };
- */
-
-/* -------------------------------------------------
- * 7. DEMO – mengeksekusi semua contoh sekaligus
- * ------------------------------------------------- */
-function runDemo(): void
-{
-    global $greeting;
-
-    echo "=== Demo Fungsi PHP ===\n";
-
-    // 1. Function sederhana
-    sayHello();
-
-    // 2. Function dengan argumen
-    sayHelloName('Mugiew');
-
-    // 3. Default argument
-    sayHelloDefault(); // menggunakan nilai default
-    sayHelloDefault('Galeano'); // override default
-
-    // 4. Contoh fungsi dengan tipe data return
-    echo '4² = ' . square(4) . "\n";
-    echo "'5'² = " . square(5) . " (string otomatis dikonversi)\n";
-
-    // 5. Urutan parameter yang benar
-    sayFullName('Budi'); // Budi Anon
-    sayFullName('Mugi', 'Setia'); // Mugi Setia
-
-    // 6. Anonymous function (closure) – sudah dideklarasikan di luar
-    echo $greeting('Andi') . "\n";
-
-    echo "=== Akhir Demo ===\n";
-}
-
-/* -------------------------------------------------
- * 8. FUNCTION DENGAN TYPE DECLARATION (contoh tambahan)
- * ------------------------------------------------- */
+// --------------------------------------
+// 5. FUNCTION DENGAN RETURN VALUE
+// --------------------------------------
 function square(int $number): int
 {
-    // PHP akan otomatis meng‑cast string yang berisi angka menjadi integer
     return $number * $number;
 }
 
-/* -------------------------------------------------
- * 9. EKSEKUSI DEMO
- * ------------------------------------------------- */
+// --------------------------------------
+// 6. ANONYMOUS FUNCTION (CLOSURE)
+// --------------------------------------
+$prefix = 'Hai';
+$greetWithPrefix = function (string $name) use ($prefix): string {
+    return "$prefix $name 👋";
+};
+
+// --------------------------------------
+// 7. ARROW FUNCTION (PHP 7.4+)
+// Lebih singkat dan otomatis akses variabel luar
+// --------------------------------------
+$firstName = 'Mugiew';
+$lastName = 'Galeano';
+
+$sayHelloArrow = fn() => "🎯 Hello $firstName $lastName";
+
+// --------------------------------------
+// 8. VARIABLE FUNCTION
+// Nama fungsi disimpan dalam variabel
+// --------------------------------------
+function foo(): void
+{
+    echo "📢 FOO\n";
+}
+function bar(): void
+{
+    echo "📢 BAR\n";
+}
+
+$functionA = 'foo';
+$functionB = 'bar';
+
+// --------------------------------------
+// 9. CALLBACK FUNCTION
+// Kirim fungsi sebagai argumen ke fungsi lain
+// --------------------------------------
+function sayGoodbye(string $name, callable $filter): void
+{
+    $filtered = call_user_func($filter, $name);
+    echo "👋 Good Bye $filtered\n";
+}
+
+// --------------------------------------
+// 10. RECURSIVE FUNCTION
+// Fungsi yang memanggil dirinya sendiri
+// --------------------------------------
+function factorialLoop(int $n): int
+{
+    $total = 1;
+    for ($i = 1; $i <= $n; $i++) {
+        $total *= $i;
+    }
+    return $total;
+}
+
+function factorialRecursive(int $n): int
+{
+    if ($n === 1) {
+        return 1;
+    }
+    return $n * factorialRecursive($n - 1);
+}
+
+// --------------------------------------
+// 11. EKSEKUSI DEMO (RUN SEMUA)
+// --------------------------------------
+function runDemo(): void
+{
+    global $greetWithPrefix, $sayHelloArrow, $functionA, $functionB;
+
+    echo "===========================\n";
+    echo "📚 DEMO FUNCTION DI PHP\n";
+    echo "===========================\n";
+
+    // Function Sederhana
+    sayHello();
+
+    // Function dengan Parameter
+    sayHelloTo('Mugi');
+
+    // Default Parameter
+    sayHelloDefault();
+    sayHelloDefault('Galeano');
+
+    // Urutan Parameter
+    sayFullName('Budi');
+    sayFullName('Mugi', 'Setiawan');
+
+    // Return Value
+    echo '🧮 5² = ' . square(5) . "\n";
+
+    // Anonymous Function
+    echo $greetWithPrefix('Andi') . "\n";
+
+    // Arrow Function
+    echo $sayHelloArrow() . "\n";
+
+    // Variable Function
+    $functionA(); // foo()
+    $functionB(); // bar()
+
+    // Callback Function
+    sayGoodbye('Mugiew', fn($name) => strtoupper($name));
+    sayGoodbye('Mugiew', 'strtolower');
+
+    // Recursive Function
+    echo '🔁 Faktorial Loop (5): ' . factorialLoop(5) . "\n";
+    echo '🔁 Faktorial Recursive (5): ' . factorialRecursive(5) . "\n";
+
+    echo "===========================\n";
+    echo "✅ SELESAI DEMO FUNCTION\n";
+    echo "===========================\n";
+}
+
+// --------------------------------------
+// EKSEKUSI PROGRAM
+// --------------------------------------
 runDemo();
