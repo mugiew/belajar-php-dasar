@@ -1,26 +1,66 @@
+# 📘 Belajar PHP Dasar Bareng Mugi
 
-# Repository Basic PHP
+Halo, teman-teman murid kece! 👋  
+Repository ini adalah tempat kita barengan belajar **dasar-dasar PHP** dari nol sampai jago bikin web dinamis. Materinya dirancang agar mudah dimengerti dan pastinya seru kaya nonton kartun Minggu pagi 🐣
 
-This repository is a result of my learning journey with **Programmer Zaman Now**.
+## 🎯 Tujuan Pembelajaran
 
-## About the Project
+- Mengenal sintaks dasar PHP
+- Memahami konsep dasar pemrograman (tipe data, percabangan, perulangan, function, dll)
+- Melatih logika dan praktik coding langsung
+- Menanamkan best practice sejak dini agar jadi programmer idaman HRD 😎
 
-- **Purpose**: To practice and apply the concepts taught by Programmer Zaman Now.
-- **Contents**: Include code samples, exercises, and projects completed during the course.
-- **Learning Outcomes**: Gained hands‑on experience with Python, web development, version control, and best coding practices.
+## 🧠 Materi yang Dipelajari
 
-## How to Use
+Berikut adalah daftar materi yang akan kamu pelajari di repository ini:
 
-1. Clone the repository:
+### 🛠️ Dasar-Dasar PHP
+- Program Hello World
+- Tipe Data: Number, Boolean, String, NULL, Array
+- Variable & Constant
+- Operator: Aritmatika, Penugasan, Perbandingan, Logika, Increment/Decrement, Array
+- Expression, Statement, dan Block
+
+### 🔀 Struktur Kontrol
+- Manipulasi String
+- If Statement
+- Switch Statement
+- Ternary Operator
+- Null Coalescing Operator
+
+### 🔁 Perulangan
+- For Loop
+- While Loop
+- Do While Loop
+- Break & Continue
+- For Each Loop
+- Goto Operator (digunakan hati-hati yaa 😅)
+
+### 🧩 Fungsi (Function)
+- Function Biasa
+- Function dengan Argument
+- Function dengan Return Value
+- Variable Function
+- Anonymous Function
+- Arrow Function
+- Callback Function
+- Recursive Function (awas jangan bikin PHP-nya pusing ya 😵)
+
+### 🧰 Fungsi Bawaan PHP
+- String Function
+- Array Function
+- is Function
+
+### 📦 Manajemen File
+- Require & Include
+
+### 🧪 Lainnya
+- Komentar (biar kode kamu ramah dibaca)
+- Variable Scope
+- Reference
+
+## 🧑‍💻 Cara Menggunakan Repo Ini
+
+1. **Clone** dulu repo-nya:
    ```bash
    git clone https://github.com/mugiew/belajar-php-dasar.git
-   ```
-2. Explore the directories for individual lessons and projects.
-3. Follow the instructions in each folder's own README for setup and execution.
-
-## Acknowledgments
-
-Huge thanks to **Programmer Zaman Now** for the excellent tutorials and guidance that made this learning experience possible.
-
----
-*This repository is a personal learning record and not an official product of Programmer Zaman Now.*
