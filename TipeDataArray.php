@@ -37,3 +37,50 @@ var_dump($names); // Sekarang ada 'Budi' dan 'Agus'
 
 // 5️⃣ Hitung jumlah elemen array
 var_dump(count($names)); // Output: 2
+
+/**
+ * ===========================================
+ * Array Sebagai Map (Associative Array)
+ * ===========================================
+ *
+ * - Di banyak bahasa pemrograman, ada struktur data bernama Map, Dictionary, atau HashMap.
+ * - Di PHP, struktur ini bisa diwakili dengan Array Asosiatif.
+ * - Kunci (key) tidak harus angka — bisa string, bool, bahkan kombinasi.
+ */
+
+// Contoh array sebagai map:
+$user = [
+    'id'      => 'mugiew',
+    'name'    => 'Mugiew Galeano',
+    'age'     => 27,
+    'status'  => 'fullstack dev ganteng',
+];
+
+var_dump($user['name']);   // Output: string(15) "Mugiew Galeano"
+var_dump($user['status']); // Output: string(24) "fullstack dev ganteng"
+
+// Menambahkan key baru
+$user['hobby'] = 'ngoding sambil ngopi';
+var_dump($user);
+
+
+/*-------------------------------------------------
+ | 🧱 Array di Dalam Array (Nested Array)
+ -------------------------------------------------
+ | PHP fleksibel banget, jadi kamu bisa menaruh array
+ | di dalam array. Cocok untuk struktur data kompleks.
+ -------------------------------------------------*/
+
+$user = [
+    'id'      => 'mugiew',
+    'name'    => 'Mugiew Galeano',
+    'age'     => 27,
+    'address' => [
+        'city'    => 'Jakarta',
+        'country' => 'Indonesia',
+    ],
+];
+
+// Akses data dalam array bersarang
+echo $user['address']['city'];    // Output: Jakarta
+echo $user['address']['country']; // Output: Indonesia
