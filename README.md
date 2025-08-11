@@ -1,7 +1,7 @@
 # 📘 Belajar PHP Dasar Bareng Mugi
 
-Halo, teman-teman! 👋
-Repository ini adalah tempat kita barengan belajar **dasar-dasar PHP** dari nol sampai jago bikin web dinamis. Materinya dirancang agar mudah dimengerti dan pastinya seru kaya nonton kartun Minggu pagi 🐣
+Halo, teman-teman! 👋.
+Repository ini adalah tempat kita barengan belajar **dasar-dasar PHP**. Materinya dirancang agar mudah dimengerti dan pastinya seru kaya nonton kartun Minggu pagi 🐣
 
 ## 🎯 Tujuan Pembelajaran
 
